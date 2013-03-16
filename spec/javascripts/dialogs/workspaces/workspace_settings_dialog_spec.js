@@ -36,7 +36,7 @@ describe("chorus.dialogs.WorkspaceSettings", function() {
         });
 
         it("fetches the workspace's members", function() {
-            expect(_.last(this.server.requests).url).toBe(this.workspace.members().url());
+            expect(_.last(this.server.requests).url).toBe(this.workspace.members().url({per_page: 1000}));
         });
 
         it("sorts the members by last name ascending", function() {

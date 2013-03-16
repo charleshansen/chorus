@@ -11,14 +11,10 @@ describe("chorus.views.WorkspaceShowSidebar", function() {
 
     describe("#setup", function() {
         beforeEach(function() {
-            spyOn(this.model.members(), 'fetch');
             spyOn(this.model.members(), 'bind').andCallThrough();
             this.view = new chorus.views.WorkspaceShowSidebar({model: this.model});
         });
 
-        it("fetches the workspace's members", function() {
-            expect(this.model.members().fetch).toHaveBeenCalled();
-        });
 
         it("binds render to the reset of the collection", function() {
             expect(this.model.members().bind).toHaveBeenCalledWith('reset', this.view.render, this.view);
