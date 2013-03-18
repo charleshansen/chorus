@@ -42,6 +42,8 @@ chorus.dialogs.WorkspaceEditMembers = chorus.dialogs.Base.extend({
         var users = _.map(ids, function (userId) {
             return self.collection.get(userId);
         });
+        // hack to generate correct counts (will be fixed properly in 2.3)
+        if (self.members.pagination) self.members.pagination.records = users.length;
         self.members.reset(users);
         self.members.save();
     },

@@ -73,6 +73,14 @@ describe("chorus.dialogs.WorkspaceEditMembers", function() {
                 expect(this.dialog.members.save).toHaveBeenCalled();
             });
 
+            it("updates the pagination count for the collection", function() {
+                this.dialog.members.pagination = {records: 1};
+                spyOn(this.dialog.members, 'save');
+                this.dialog.$("button.submit").click();
+                expect(this.dialog.members.pagination.records).toBe(2);
+                expect(this.dialog.members.save).toHaveBeenCalled();
+            });
+
             context("when the save succeeds", function() {
                 beforeEach(function() {
                     spyOnEvent(this.dialog.pageModel, "invalidated");
