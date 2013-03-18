@@ -52,3 +52,7 @@ production:
 packaging:
   database: chorus_rails_packaging
   <<: *default
+
+legacy_packaging:
+  database: chorus_rails_legacy_packaging
+  <<: *default
