@@ -67,18 +67,6 @@ describe BulkData do
     end
   end
 
-  describe "add default GPDB instance", :database_integration do
-    it "should create a GPDB instance with owner" do
-      any_instance_of(GpdbInstance) do |instance|
-        mock(instance).refresh_all
-      end
-      expect {
-        BulkData.create_gpdb_instance(user_name, 'chores_r_us')
-      }.to change { GpdbInstance.count }.by(1)
-      GpdbInstance.last.name.should == 'chores_r_us'
-    end
-  end
-
   describe "add sandboxes", :database_integration do
     before do
       BulkData.create_workspaces(2)
