@@ -67,7 +67,7 @@ resource "Workspaces" do
     required_parameters :instance_id, :database_name, :schema_name, :id
 
     let(:gpdb_instance) { InstanceIntegration.real_gpdb_instance }
-    let(:database_name) { "a_new_database_name" }
+    let(:database_name) { "new_#{Rails.env}" }
     let(:schema_name) { "a_new_schema_name" }
     let(:user) { gpdb_instance.owner }
 
