@@ -41,7 +41,7 @@ group :integration do
   gem 'capybara-screenshot'
 end
 
-group :test, :integration, :packaging, :ci_jasmine, :ci_legacy_migration, :legacy_packaging do
+group :test, :integration, :packaging, :ci_jasmine, :ci_legacy_migration do
   gem 'rr'
   gem 'fuubar'
   gem 'factory_girl'
@@ -57,7 +57,7 @@ group :test, :integration, :packaging, :ci_jasmine, :ci_legacy_migration, :legac
   gem 'poltergeist'
 end
 
-group :test, :development, :integration, :packaging, :ci_jasmine, :ci_legacy_migration, :legacy_packaging do
+group :test, :development, :integration, :packaging, :ci_jasmine, :ci_legacy_migration do
   gem 'foreman', '0.46',         :require => false
   gem 'rake',                    :require => false
   gem 'ruby-debug',              :require => false
