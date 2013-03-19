@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ -z "$RAILS_ENV" ]]; then
-  export RAILS_ENV=packaging
+  export RAILS_ENV=legacy_packaging
 fi
 GPDB_HOST=chorus-gpdb-ci
 
