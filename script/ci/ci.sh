@@ -7,11 +7,11 @@ fi
 export GPDB_HOST=chorus-gpdb-ci
 export HADOOP_HOST=chorus-gphd02
 
-export JASMINE_PORT=9999
 
 set -e
 
 . script/ci/setup.sh
+export JASMINE_PORT=9999
 
 targets=${@}
 possible_targets="fixtures jasmine ruby legacy_migration api_docs"
