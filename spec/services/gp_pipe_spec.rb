@@ -67,9 +67,9 @@ describe GpPipe, :database_integration => true do
         when "data_dir"
           '/tmp'
         when "write_port"
-          "8000"
+          Rails.env.legacy_packaging? ? "8002" : "8000"
         when "read_port"
-          "8001"
+          Rails.env.legacy_packaging? ? "8003" : "8001"
         when "url"
           Socket.gethostname
         when "ssl.enabled"
