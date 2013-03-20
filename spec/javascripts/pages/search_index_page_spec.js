@@ -117,7 +117,7 @@ describe("chorus.pages.SearchIndexPage", function() {
                     });
 
                     it("shows that workfile in the sidebar", function() {
-                        expect(this.page.sidebar.$(".fileName")).toHaveText("Public");
+                        expect(this.page.sidebar.$(".fileName")).toHaveText(this.workfileLIs.eq(2).find('a.name').text());
                     });
 
                     it("sets the workfile as the selectedItem on the search result", function() {
